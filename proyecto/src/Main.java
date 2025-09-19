@@ -1,20 +1,22 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
         Main m = new Main();
-        System.out.println(m.recursividad(10));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa un numero entero");
+        int numeroN = sc.nextInt();
+        System.out.println("La suma recursiva del numero "+numeroN+" Es igual a = "+m.recursividad(numeroN));
+        
         
     }
 
-int suma = 0;
     int recursividad(int num){
-        
-        if(num < 0){
-            return suma;
+        if(num == 0){
+            return 0;
         }else{
-            suma += num;
-            return recursividad(num-1);
+            return  num + recursividad(num - 1);
         }
     }
-    
 }
